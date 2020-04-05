@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 // Static array - so no args - we never expect to change it in this case
 const songsReducer = () => {
     return [
@@ -16,3 +18,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
 
     return selectedSong;
 };
+
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+});
